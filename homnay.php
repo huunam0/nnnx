@@ -32,7 +32,7 @@ if ($result) {
 	if (mysql_num_rows($result)) {
 		//echo "<ul>";
 		while ($row = mysql_fetch_array($result)) {
-			echo '<div class="motdong">'.$row['ngay'].'-'.$row['thang'].'-'.$row['nam'].': <a href="http://ngaynaynamxua.info/sk.php?id='.$row['id'].'" target="_blank">'.$row['sukien'].'</a></div>';
+			echo '<div class="motdong">'.$row['ngay'].'.'.$row['thang'].'.'.$row['nam'].': <a href="http://ngaynaynamxua.info/sk.php?id='.$row['id'].'" target="_blank">'.$row['sukien'].'</a></div>';
 		}
 		//echo "</ul>";
 	}

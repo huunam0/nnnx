@@ -20,6 +20,7 @@ a {
   <div class="tieude">NGÀY NÀY NĂM XƯA
   </div>
 <?php 
+date_default_timezone_set("Asia/Ho_Chi_Minh");
 mysql_connect("localhost","root","");
 mysql_select_db("ngaynaynamxua");
 //mysql_query("set name utf8");
@@ -27,6 +28,7 @@ $ngay = date("d");
 $thang = date("m");
 $nam = date("y");
 $sql="select * from cacsukien where ngay=$ngay and thang=$thang;";
+//echo $sql;
 $result = mysql_query($sql);
 if ($result) {
 	if (mysql_num_rows($result)) {

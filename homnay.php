@@ -21,9 +21,8 @@ a {
   </div>
 <?php 
 date_default_timezone_set("Asia/Ho_Chi_Minh");
-mysql_connect("localhost","root","");
-mysql_select_db("ngaynaynamxua");
-//mysql_query("set name utf8");
+require_once("config.php");
+mysql_query("set name utf8");
 $ngay = date("d");
 $thang = date("m");
 $nam = date("y");

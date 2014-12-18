@@ -25,6 +25,7 @@
 	  </div>
 <?php
 date_default_timezone_set("Asia/Ho_Chi_Minh");
+include_once("bbcode.php");
 require_once("config.php");
 mysql_query("set name utf8");
 $ngay = date("d");
@@ -35,7 +36,7 @@ $result = mysql_query($sql);
 if ($result) {
 	if (mysql_num_rows($result)) {
 		while ($row = mysql_fetch_array($result)) {
-			echo '<div class="motdong"><p class="calendar">'.$row['nam'].'<span>'.$row['ngay'].' / '.$row['thang'].'</span></p><p><a href="http://ngaynaynamxua.info/'.$row['id'].'">'.$row['sukien'].'</a></p></div>';
+			echo '<div class="motdong"><p class="calendar">'.$row['nam'].'<span>'.$row['ngay'].' / '.$row['thang'].'</span></p><p><a href="http://ngaynaynamxua.info/'.$row['id'].'">'.showBBcodes($row['sukien']).'</a></p></div>';
 		}
 	}
 }

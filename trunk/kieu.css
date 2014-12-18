@@ -59,13 +59,16 @@ body {
 #title {
 	float:left;
 	width:680;
-	background-image:url("hinh/home-banner-time.jpg");
+	background-image:url("hinh/home-banner-time2.jpg");
 	height:115px;
 	margin-left:15px;
+	background-repeat:repeat-x;
+	background-size:100%;
 }
 #title  span{
-	text-transform:capitalize;
+	text-transform:uppercase;
 	padding-left:200px;
+	margin-top:150px;
 }
 .rightwidget {
 	background:#898987;

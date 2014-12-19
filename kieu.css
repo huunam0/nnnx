@@ -145,6 +145,9 @@ a:hover {
 div.camera {
 	background-image: url("hinh/camera.png");
 }
+div.wiki {
+	background-image: url("hinh/wiki.png");
+}
 div.article {
 	background-image: url("hinh/article.png");
 }

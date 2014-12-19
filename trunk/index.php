@@ -9,23 +9,34 @@
 <div id='mainpage'>
   <div id="headerpart">
     <div id="logo">
-	<img src="hinh/sand-clock.gif" height="110px" />
+	<img src="hinh/sand-clock.gif" height="100px" />
 	</div>
 	<div id="title">
 	<div style="position:absolute; z-index:1;">
-	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="680" height="110">
-	<param name="movie" value="hinh/88.swf" />
+	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="680" height="150">
+	<param name="movie" value="hinh/nen2.swf" />
 	<param name="quality" value="high" />
 	<param name="wmode" value="transparent">
-	<embed src="hinh/88.swf" quality="high" type="application/x-shockwave-flash" width="680" height="110" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+	<embed src="hinh/nen2.swf" quality="high" type="application/x-shockwave-flash" width="680" height="150" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" />
 </object>
-	</div>
+	</div><br/>
 	<span>NGày này Năm Xưa</span>
 	</div>
 	<div style="clear:both;"></div>
   </div>
   <div id="menubar">
-  menu bar
+  <div class="menu_out">
+  <div class="menu_in">
+      <a href="#" class="menu">Trang chủ</a>
+    </div>
+  </div>
+  <div class="menu_out">
+  <div class="menu_in">
+      <a href="#" class="menu">Trang chủ</a>
+    </div>
+  </div>
+  <div id="danhngon"><div id="danhngon_tren">Học, Học nữa, Học mãi.</div><div id="danhngon_duoi">Lê-nin</div>
+  </div>
   </div>
   <div id="content">
     <div id = "leftside">

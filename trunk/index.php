@@ -1,3 +1,10 @@
+<?php 
+date_default_timezone_set("Asia/Ho_Chi_Minh");
+include_once("bbcode.php");
+require_once("config.php");
+mysql_query("set name utf8");
+
+?>
 <html>
 <head>
 <meta charset="utf8">
@@ -13,11 +20,11 @@
 	</div>
 	<div id="title">
 	<div style="position:absolute; z-index:1;">
-	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="680" height="150">
+	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="680" height="110">
 	<param name="movie" value="hinh/nen2.swf" />
 	<param name="quality" value="high" />
 	<param name="wmode" value="transparent">
-	<embed src="hinh/nen2.swf" quality="high" type="application/x-shockwave-flash" width="680" height="150" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+	<embed src="hinh/nen2.swf" quality="high" type="application/x-shockwave-flash" width="680" height="110" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" />
 </object>
 	</div><br/>
 	<span>NGày này Năm Xưa</span>
@@ -35,7 +42,16 @@
       <a href="#" class="menu">Trang chủ</a>
     </div>
   </div>
-  <div id="danhngon"><div id="danhngon_tren">Học, Học nữa, Học mãi.</div><div id="danhngon_duoi">Lê-nin</div>
+  <div id="danhngon">
+<?php 
+$sql= "select * from danhngon order by rand() limit 1;";
+$result=mysql_query($sql);
+if ($row=mysql_fetch_array($result)) {
+	echo '<div id="danhngon_tren">'.$row['caunoi'].'</div>';
+	echo '<div id="danhngon_duoi">'.$row['tacgia'].'</div>';
+}
+?>
+ 
   </div>
   </div>
   <div id="content">
@@ -43,10 +59,6 @@
 	  <div class="tieude">NGÀY NÀY NĂM XƯA
 	  </div>
 <?php
-date_default_timezone_set("Asia/Ho_Chi_Minh");
-include_once("bbcode.php");
-require_once("config.php");
-mysql_query("set name utf8");
 $ngay = date("d");
 $thang = date("m");
 $nam = date("y");
@@ -63,7 +75,11 @@ if ($result) {
 	  <div class="motdong">
 	    <p class="calendar">1945 <span>02 / 9</span></p>
         <p><a href="#">Bác Hồ đọc bản tuyên ngôn độc lập<br/>
-		Khai sinh ra nước Việt Nam Dân Chủ Cộng Hoà</a><img class="miniicon" src="hinh/camera.png" height="18px"/><img class="miniicon" src="hinh/video.png" height="18px"/><img class="miniicon" src="hinh/article.png" height="18px"/></p>
+		Khai sinh ra nước Việt Nam Dân Chủ Cộng Hoà</a>
+		<img class="miniicon" src="hinh/camera.png" height="14px" title="Hình ảnh"/>
+		<img class="miniicon" src="hinh/video.png" height="14px" title="Phim, video"/>
+		<img class="miniicon" src="hinh/article.png" height="14px" title="Bài báo"/>
+		<img class="miniicon" src="hinh/wiki.png" height="14px" title="wiki"/></p>
 	  </div>
 	  <div class="motdong">
 	    <p class="calendar">1969 <span>02 / 9</span></p>
@@ -90,7 +106,7 @@ if ($result) {
 </div>
 <div id="footerpart">
   <div class="tree">
-    <img src="hinh/caycanh.png"/>
+    <img src="hinh/mountain.png" width="220px"/>
   </div>
   <div class="copyright">
   Written by 

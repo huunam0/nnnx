@@ -66,16 +66,16 @@ body {
 #danhngon_tren {
 	position:absolute;
 	top:0;
-	right:60;
+	right:10;
 	font-style:bold;
-	font-size:12px;
+	font-size:13px;
 }
 #danhngon_duoi {
 	position:absolute;
 	top:16;
 	right:10;
 	font-style:italic;
-	font-size:10px;
+	font-size:11px;
 }
 #leftside {
 	float:left;
@@ -114,7 +114,7 @@ body {
 }
 .rightwidget {
 	background:#f0f5f7;
-	margin-bottom:5px;
+	margin-bottom:8px;
 	box-shadow: 0 0 5px #bbb;
 	padding:5px;
 }
@@ -134,10 +134,10 @@ body {
 }
 a {
     text-decoration: none;
-	color: inherit;
+	color: black;
 }
 a:visited, a:active {
-  color: inherit;
+  color: black;
 }
 a:hover {
 	color:red;

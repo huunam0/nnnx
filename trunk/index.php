@@ -6,7 +6,7 @@ mysql_query("set name utf8");
 $theloai=["","camera","video","wiki","article"];
 $ngay = date("d");
 $thang = date("m");
-$nam = date("y");
+$nam = date("Y");
 ?>
 <html>
 <head>
@@ -37,12 +37,12 @@ $nam = date("y");
   <div id="menubar">
   <div class="menu_out">
   <div class="menu_in">
-      <a href="#" class="menu">Trang chủ</a>
+      <a href="." class="menu">Trang chủ</a>
     </div>
   </div>
   <div class="menu_out">
   <div class="menu_in">
-      <a href="#" class="menu">Trang chủ</a>
+      <a href="gioithieu.html" class="menu">Giới thiệu</a>
     </div>
   </div>
   <div id="danhngon">
@@ -50,7 +50,7 @@ $nam = date("y");
 $sql= "select * from danhngon order by rand() limit 1;";
 $result=mysql_query($sql);
 if ($row=mysql_fetch_array($result)) {
-	echo '<div id="danhngon_tren">'.$row['caunoi'].'</div>';
+	echo '<div id="danhngon_tren">'.$row['caunoi'].str_repeat("&nbsp;",2*strlen($row['tacgia'])).'</div>';
 	echo '<div id="danhngon_duoi">'.$row['tacgia'].'</div>';
 }
 ?>
@@ -90,7 +90,12 @@ if (isset($_GET['id'])) {
 	}
 } 
 else {
-	echo '<div class="tieude">NGÀY NÀY NĂM XƯA</div>';
+	if (isset($_GET['date'])) {
+		$ngaythang = explode("-",$_GET['date']);
+		$ngay=$ngaythang[0];
+		$thang=$ngaythang[1];
+	}
+	echo '<div class="tieude">NGÀY NÀY NĂM XƯA '.$ngay.'/'.$thang.'</div>';
 	
 	$sql="select * from cacsukien where ngay=$ngay and thang=$thang;";
 	$result = mysql_query($sql);
@@ -107,10 +112,34 @@ else {
 	</div>
 	<div id="rightside">
 	  <div id="calendar" class="rightwidget">
-	  <div>Tháng <?php echo $thang;?></div>
+	  <div style="text-align:center;">Tháng <?php echo $thang." năm ".$nam;?></div>
 	  <table>
-	  <th><td>T2</td><td>T3</td><td>T4</td><td>T5</td><td>T6</td><td>T7</td><td>CN</td>
-	  </th>
+	  <tr align="center"><td width="15%">Thứ2</td><td width="15%">Thứ3</td><td width="15%">Thứ4</td><td width="15%">Thứ5</td><td width="15%">Thứ6</td><td width="15%">Thứ7</td><td width="15%">CN</td>
+	  </tr>
+	  <tr align="center">
+<?php 
+$thu = date( "w", strtotime("$nam-$thang-1"));
+$numday = date("t");
+if ($thu==0) $thu=7;
+$i=1; 
+while ($i<$thu) {
+	echo "<td>&nbsp;</td>";
+	$i++;
+}
+for ($i=1; $i<=$numday; $i++) {
+	echo "<td><a href='index.php?date=$i-$thang'>$i</a></td>";
+	if ($thu==7) {
+		echo "</tr>\n<tr align='center'>";
+		$thu=0;
+	}
+	$thu++;
+}
+while ($thu<7) {
+	echo "<td>&nbsp;</td>";
+	$thu++;
+}
+echo "<td>&nbsp;</td></tr>";
+?>
 	  </table>
 	  </div>
 	  <div id="somevideos" class="rightwidget">

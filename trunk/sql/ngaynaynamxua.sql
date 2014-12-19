@@ -3,12 +3,12 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 18, 2014 at 01:15 PM
+-- Generation Time: Dec 19, 2014 at 02:06 PM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+07:00";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `cacsukien` (
   `nguoilam` varchar(7) COLLATE utf8_unicode_ci NOT NULL,
   `sudung` smallint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=399 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=400 ;
 
 --
 -- Dumping data for table `cacsukien`
@@ -414,7 +414,8 @@ INSERT INTO `cacsukien` (`id`, `ngay`, `thang`, `nam`, `ngaynao`, `sukien`, `the
 (393, 6, 9, 1931, '0000-00-00', 'Ngày mất của Lê Hồng Phong', 1, '2014-10-13 05:28:23', 'Tánh', 0),
 (394, 6, 9, 1942, '0000-00-00', 'Ngày mất của Lê Hồng Phong', 1, '2014-10-13 05:28:36', 'Tánh', 0),
 (395, 7, 9, 1887, '0000-00-00', 'Ngày mất Đinh Công Tráng', 1, '2014-10-13 05:34:46', 'Tánh', 0),
-(398, 18, 12, 1985, '0000-00-00', 'Ngày mất nhà thơ Xuân Diệu &lt;br/&gt; Hưởng thọ 69 tuổi.', 2, '2014-12-18 01:17:00', '', 1);
+(398, 18, 12, 1985, '0000-00-00', 'Ngày mất nhà thơ Xuân Diệu &lt;br/&gt; Hưởng thọ 69 tuổi.', 2, '2014-12-18 01:17:00', '', 1),
+(399, 19, 12, 1946, '0000-00-00', 'Ngày toàn quốc kháng chiến', 1, '2014-12-19 19:36:24', '', 1);
 
 -- --------------------------------------------------------
 
@@ -431,7 +432,7 @@ CREATE TABLE IF NOT EXISTS `cactulieu` (
   `luctao` datetime NOT NULL,
   `sudung` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=48 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=51 ;
 
 --
 -- Dumping data for table `cactulieu`
@@ -484,7 +485,10 @@ INSERT INTO `cactulieu` (`id`, `sk`, `theloai`, `url`, `tieude`, `luctao`, `sudu
 (44, 396, 4, 'http://thainguyen.edu.vn/Thanhvien/c2bacson/602/1872/Lich-su-hinh-thanh-ngay-quan-doi-nhan-dan-Viet-Nam.aspx', 'Lịch sử hình thành ngày quân đội nhân dân Việt Nam', '2014-12-13 15:44:04', 0),
 (45, 396, 1, 'http://www.thanhdoan.hochiminhcity.gov.vn/ThanhDoan/webtd_/data/news/2014/11/21003/Le%20xuat%20quan%20ngay%2022-12-1944.jpg', 'Đội Việt Nam tuyên truyền giải phóng quân', '2014-12-13 15:46:54', 1),
 (46, 398, 1, 'http://www.tanhieptho.com/ti%E1%BB%83u-s%E1%BB%AD-s%E1%BB%B1-nghi%E1%BB%87p-va-thi-ca-c%E1%BB%A7a-nha-th%C6%A1-xuan-di%E1%BB%87u/2009/01/', 'Tiểu sử, sự nghiệp và thi ca của nhà thơ Xuân Diệu', '2014-12-18 01:26:32', 1),
-(47, 398, 1, 'http://upload.wikimedia.org/wikipedia/vi/2/20/Xuandieu1.jpg', 'Ảnh chân dung Xuân Diệu', '2014-12-18 01:27:31', 1);
+(47, 398, 1, 'http://upload.wikimedia.org/wikipedia/vi/2/20/Xuandieu1.jpg', 'Ảnh chân dung Xuân Diệu', '2014-12-18 01:27:31', 1),
+(48, 399, 4, 'http://maxreading.com/sach-hay/cac-ngay-le-ky-niem-va-lich-su/19-12-1946-ngay-toan-quoc-khang-chien-3014.html', 'Ngày toàn quốc kháng chiến', '2014-12-19 19:37:07', 1),
+(49, 399, 3, 'http://vi.wikipedia.org/wiki/L%E1%BB%9Di_k%C3%AAu_g%E1%BB%8Di_to%C3%A0n_qu%E1%BB%91c_kh%C3%A1ng_chi%E1%BA%BFn', 'Ngày toàn quốc kháng chiến', '2014-12-19 19:40:04', 1),
+(50, 399, 1, 'http://vi.wikipedia.org/wiki/L%E1%BB%9Di_k%C3%AAu_g%E1%BB%8Di_to%C3%A0n_qu%E1%BB%91c_kh%C3%A1ng_chi%E1%BA%BFn#mediaviewer/File:Toanquockhangchien.jpg', 'Bút tích lời kêu gọi toàn quốc kháng chiến của Bác Hồ', '2014-12-19 19:40:45', 1);
 
 -- --------------------------------------------------------
 
@@ -495,9 +499,18 @@ INSERT INTO `cactulieu` (`id`, `sk`, `theloai`, `url`, `tieude`, `luctao`, `sudu
 CREATE TABLE IF NOT EXISTS `danhngon` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `caunoi` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
-  `tacgia` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `tacgia` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `ynghia` text COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `danhngon`
+--
+
+INSERT INTO `danhngon` (`id`, `caunoi`, `tacgia`, `ynghia`) VALUES
+(1, 'Học, Học nữa, Học mãi', 'Lê-nin', ''),
+(3, 'Bác học không có nghĩa là ngừng học.', 'Charles Robert Darwin', '- Bác học: là những người học rộng, hiểu biết sâu về một hoặc nhiều ngành khoa học\n- Ngừng học: là bằng lòng với những gì mình đã biết, không tiếp tục tìm hiểu, học tâp những cái mới\n2.\n- Câu nói của Đác- uyn là một câu nói đúng đắn về vấn đề học tập của con người chúng ta.\n- Có thể hiểu câu nói là cho dù đã biết nhiều kiến thức, được mọi người nể phục, có danh tiếng rồi vẫn không được ngừng học tập. Cần phải học tập mãi mãi như Lê-nin từng nói: "Học, học nữa, học mãi".\n- Môi ngày qua đi, cuộc sống của chúng ta lại có những thay đổi mới, và lại có những kiến thức, phát mình mới được phát minh, tìm kiếm ra nhờ bộ óc của con người. Nếu chũng ta ngừng học hỏi, chúng ta sẽ mau chóng bị tụt hậu so với mọi người. Nhất là trong tình hình công nghệ thông tin đang phát triển như hiện nay, việc học hỏi liên tục lại càng quan trọng.\n- Hơn thế, kho tàng kiến thức của nhân loại là vô cùng phong phú. Đó là kết quả cảu quá trình nghiên cứu, đúc kết của con người từ thuở sơ khai đến nay và cũng là kết quả của hàng triệu bộ óc thiên tài cũng như của tất cả những người dân qua quá trình đúc kết kình nghiệm. Chúng ta cần phải học tập không ngừng mới có thể làm chủ kho tàng kiến thức đó được. Kho tàng ấy có thể nói là gần như vô tận, nhưng cũng có lúc cần trong cuộc sống.\nVậy nên, đừng bao giờ ngừng học hỏi. Cho dù bạn đã có danh vọng, địa vị, nhưng bạn chưa phải là giỏi nhất, hãy học tập hết mình, học tập mãi mãi ... ');
 
 -- --------------------------------------------------------
 
@@ -509,7 +522,7 @@ CREATE TABLE IF NOT EXISTS `loaisukien` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `theloai` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `loaisukien`
@@ -518,7 +531,8 @@ CREATE TABLE IF NOT EXISTS `loaisukien` (
 INSERT INTO `loaisukien` (`id`, `theloai`) VALUES
 (1, 'Lịch sử'),
 (2, 'Xã hội'),
-(3, 'Khoa học');
+(3, 'Khoa học'),
+(4, 'Wiki');
 
 -- --------------------------------------------------------
 
@@ -539,7 +553,7 @@ CREATE TABLE IF NOT EXISTS `loaitulieu` (
 INSERT INTO `loaitulieu` (`id`, `tenloai`) VALUES
 (1, 'Hình ảnh'),
 (2, 'Phim ngắn'),
-(3, 'Âm thanh'),
+(3, 'Wiki'),
 (4, 'Bài báo');
 
 -- --------------------------------------------------------

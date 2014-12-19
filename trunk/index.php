@@ -9,9 +9,17 @@
 <div id='mainpage'>
   <div id="headerpart">
     <div id="logo">
-	<img src="hinh/dong-ho-cat.png" />
+	<img src="hinh/sand-clock.gif" height="110px" />
 	</div>
 	<div id="title">
+	<div style="position:absolute; z-index:1;">
+	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="680" height="110">
+	<param name="movie" value="hinh/88.swf" />
+	<param name="quality" value="high" />
+	<param name="wmode" value="transparent">
+	<embed src="hinh/88.swf" quality="high" type="application/x-shockwave-flash" width="680" height="110" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+</object>
+	</div>
 	<span>NGày này Năm Xưa</span>
 	</div>
 	<div style="clear:both;"></div>

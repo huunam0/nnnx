@@ -2,7 +2,7 @@
 date_default_timezone_set("Asia/Ho_Chi_Minh");
 include_once("bbcode.php");
 require_once("config.php");
-mysql_query("set name utf8");
+
 $theloai=["","camera","video","wiki","article"];
 $ngay = date("d");
 $thang = date("m");

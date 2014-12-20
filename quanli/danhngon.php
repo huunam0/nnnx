@@ -41,7 +41,7 @@ if (isset($_POST['search'])) { //tim kiem
 } else if (isset($_POST['add'])) { //them moi
 	$caunoi=$_POST['caunoi'];
 	$tacgia=$_POST['tacgia'];
-	$ynghia = mysql_real_escape_string($_POST['ynghia']);
+	$ynghia = mysqli_real_escape_string($link,$_POST['ynghia']);
 	$sql="insert into danhngon (caunoi,tacgia,ynghia) value ('$caunoi','$tacgia','$ynghia')";
 	echo $sql;
 	$ret=mysqli_query($link,$sql);

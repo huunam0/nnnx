@@ -9,7 +9,7 @@ a {
 .motdong {
 	background-image:url("hinh/icon-calendar.png");
 	background-repeat:no-repeat;
-	padding-left:16px;
+	padding-left:17px;
 }
 </style>
 </head>
@@ -33,7 +33,10 @@ if ($result) {
 	if (mysql_num_rows($result)) {
 		//echo "<ul>";
 		while ($row = mysql_fetch_array($result)) {
-			echo '<div class="motdong">'.$row['ngay'].'.'.$row['thang'].'.'.$row['nam'].': <a href="http://ngaynaynamxua.info/sk.php?id='.$row['id'].'" target="_blank">'.$row['sukien'].'</a></div>';
+			if ($row['nam'])
+				echo '<div class="motdong">'.$row['nam'].': <a href="http://ngaynaynamxua.info/index.php?id='.$row['id'].'" target="_blank">'.$row['sukien'].'</a></div>';
+			else
+				echo '<div class="motdong"><a href="http://ngaynaynamxua.info/index.php?id='.$row['id'].'" target="_blank">'.$row['sukien'].'</a></div>';
 		}
 		//echo "</ul>";
 	}

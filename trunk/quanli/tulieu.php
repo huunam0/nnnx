@@ -43,6 +43,7 @@ if (!isset($_GET['sk'])) {
 			echo "<br/><input type='submit' value='Sửa' name='sua'>";
 			echo "</form>";
 			echo "<br/><a href='tulieu.php?delete&id=$skid' onclick=\"return (confirm('Bạn muốn xóa tư liệu này'))\">Xoá tư liệu này</a>";
+			echo "<br/><a href='tulieu.php?sk=".$row['sk']."'>Xem sự kiện này</a>";
 		}
 			
 	}

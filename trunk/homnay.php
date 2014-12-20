@@ -26,7 +26,7 @@ $thang = date("m");
 $nam = date("y");
 
 if (isset($_GET['title'])) echo '<div style="text-align:center;">NGÀY NÀY NĂM XƯA</div>';
-$sql="select * from cacsukien where ngay=$ngay and thang=$thang;";
+$sql="select * from cacsukien where ngay=$ngay and thang=$thang order by rand();";
 //echo $sql;
 $result = mysql_query($sql);
 if ($result) {

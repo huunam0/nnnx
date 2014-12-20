@@ -22,7 +22,7 @@ $nam = date("Y");
 	<img src="hinh/sand-clock.gif" height="100px" />
 	</div>
 	<div id="title">
-	<div style="position:absolute; z-index:1;">
+	<div style="position:absolute; z-index:1;display:none;">
 	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="680" height="110">
 	<param name="movie" value="hinh/nen2.swf" />
 	<param name="quality" value="high" />
@@ -112,7 +112,7 @@ else {
 	</div>
 	<div id="rightside">
 	  <div id="calendar" class="rightwidget">
-	  <div style="text-align:center;">Tháng <?php echo $thang." năm ".$nam;?></div>
+	  <div style="text-align:center;"><b>Tháng <?php echo $thang." năm ".$nam;?></b></div>
 	  <table>
 	  <tr align="center"><td width="15%">Thứ2</td><td width="15%">Thứ3</td><td width="15%">Thứ4</td><td width="15%">Thứ5</td><td width="15%">Thứ6</td><td width="15%">Thứ7</td><td width="15%">CN</td>
 	  </tr>

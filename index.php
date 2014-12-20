@@ -97,12 +97,15 @@ else {
 	}
 	echo '<div class="tieude">NGÀY NÀY NĂM XƯA '.$ngay.'/'.$thang.'</div>';
 	
-	$sql="select * from cacsukien where ngay=$ngay and thang=$thang;";
+	$sql="select * from cacsukien where ngay=$ngay and thang=$thang order by rand();";
 	$result = mysql_query($sql);
 	if ($result) {
 		if (mysql_num_rows($result)) {
 			while ($row = mysql_fetch_array($result)) {
-				echo '<div class="motdong"><p class="calendar">'.$row['nam'].'<span>'.$row['ngay'].' / '.$row['thang'].'</span></p><p><a href="index.php?id='.$row['id'].'">'.showBBcodes($row['sukien']).'</a></p></div>';
+				if ($row['nam'])
+					echo '<div class="motdong"><p class="calendar">'.$row['nam'].'<span>'.$row['ngay'].' / '.$row['thang'].'</span></p><p><a href="index.php?id='.$row['id'].'">'.showBBcodes($row['sukien']).'</a></p></div>';
+				else
+					echo '<div class="motdong"><p class="calendar">'.$row['ngay'].'/'.$row['thang'].'<span></span></p><p><a href="index.php?id='.$row['id'].'">'.showBBcodes($row['sukien']).'</a></p></div>';
 			}
 		}
 	}
@@ -112,7 +115,7 @@ else {
 	</div>
 	<div id="rightside">
 	  <div id="calendar" class="rightwidget">
-	  <div style="text-align:center;"><b>Tháng <?php echo $thang." năm ".$nam;?></b></div>
+	  <div style="text-align:center;background:#FAD4F6;"><b>Tháng <?php echo $thang." năm ".$nam;?></b></div>
 	  <table>
 	  <tr align="center"><td width="15%">Thứ2</td><td width="15%">Thứ3</td><td width="15%">Thứ4</td><td width="15%">Thứ5</td><td width="15%">Thứ6</td><td width="15%">Thứ7</td><td width="15%">CN</td>
 	  </tr>

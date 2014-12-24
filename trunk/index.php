@@ -99,6 +99,7 @@ else {
 	echo '<div class="tieude">NGÀY NÀY NĂM XƯA '.$ngay.'/'.$thang.'</div>';
 	
 	$sql="select * from cacsukien where ngay=$ngay and thang=$thang and sudung=1 order by thutu ;";
+	//echo $sql;
 	$result = mysql_query($sql);
 	if ($result) {
 		if (mysql_num_rows($result)) {

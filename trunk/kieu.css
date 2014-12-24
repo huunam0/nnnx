@@ -141,7 +141,9 @@ body {
 	background:#CAFA3C;
 }
 .tieude {
+	margin-top:10px;
 	text-align:center;
+	margin-bottom:10px;
 }
 a {
     text-decoration: none;
@@ -154,22 +156,26 @@ a:hover {
 	color:red;
 }
 div.camera {
-	background-image: url("hinh/camera.png");
+	background-image: url("hinh/pictureicon.png");
+	min-height:50px;
 }
 div.wiki {
 	background-image: url("hinh/wiki.png");
+	min-height:50px;
 }
 div.article {
-	background-image: url("hinh/article.png");
+	background-image: url("hinh/articleicon.png");
+	min-height:50px;
 }
 div.video {
-	background-image: url("hinh/video.png");
+	background-image: url("hinh/videoicon.png");
+	min-height:50px;
 }
 .tulieu {
-	margin-bottom:3px;
+	margin-bottom:5px;
 	background-repeat:no-repeat;
-	background-size:17px 17px;
-	padding-left:20px;
+	background-size:50px 50px;
+	padding-left:60px;
 }
 
 .miniicon {

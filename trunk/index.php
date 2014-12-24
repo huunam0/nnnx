@@ -31,7 +31,7 @@ $nam = date("Y");
 </object>
 	</div>
 	<div class="tieude">Ngày Này Năm Xưa</div>
-	<div class="loicuabac">Dân ta phải biết sử ta<br/>Cho tường gốc tích nước nhà Việt Nam <br/><i>(Hồ Chí Minh)</i></div>
+	<div class="loicuabac"><b>Dân ta phải biết sử ta<br/>Cho tường gốc tích nước nhà Việt Nam </b><br/><i>(Hồ Chí Minh)</i></div>
 	</div>
 	<div style="clear:both;"></div>
   </div>

@@ -19,7 +19,7 @@ $nam = date("Y");
 <div id='mainpage'>
   <div id="headerpart">
     <div id="logo">
-	<img src="hinh/trong100.jpg" height="110px" />
+	<img src="hinh/trong100.jpg" height="106px" />
 	</div>
 	<div id="title">
 	<div style="position:absolute; z-index:1;display:none;">
@@ -29,9 +29,9 @@ $nam = date("Y");
 	<param name="wmode" value="transparent">
 	<embed src="hinh/nen2.swf" quality="high" type="application/x-shockwave-flash" width="680" height="110" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" />
 </object>
-	</div><br/>
-	<span>NGày này Năm Xưa</span>
-	<div style="text-align:center;color:blue;">Dân ta phải biết sử ta<br/>Cho tường gốc tích nước nhà Việt Nam <i>(Hồ Chí Minh)</i></div>
+	</div>
+	<div class="tieude">Ngày Này Năm Xưa</div>
+	<div class="loicuabac">Dân ta phải biết sử ta<br/>Cho tường gốc tích nước nhà Việt Nam <br/><i>(Hồ Chí Minh)</i></div>
 	</div>
 	<div style="clear:both;"></div>
   </div>
@@ -148,7 +148,7 @@ echo "<td>&nbsp;</td></tr>";
 	  </div>
 	  <div id="somevideos" class="rightwidget"><div class="centertitle">VIDEO</div>
 <?php 
-$ngaythang=date("dm");
+$ngaythang=(strlen($ngay)==1?"0":"").$ngay.(strlen($thang)==1?"0":"").$thang;
 $sql="select * from phimtulieu where sudung=1 and ngaythang='$ngaythang' order by rand() limit 1;";
 $result=mysql_query($sql);
 if ($result) {

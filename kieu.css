@@ -113,6 +113,8 @@ body {
 	text-transform:uppercase;
 	padding-left:60px;
 	padding-top:6px;
+	margin-top:0px;
+	margin-bottom:0px;
 	text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
 	color: #fc0408;
 	opacity: 0.5;

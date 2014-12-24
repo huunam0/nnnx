@@ -19,7 +19,7 @@ $nam = date("Y");
 <div id='mainpage'>
   <div id="headerpart">
     <div id="logo">
-	<img src="hinh/trong100.jpg" height="106px" />
+	<img src="hinh/trong100.png" height="120px" />
 	</div>
 	<div id="title">
 	<div style="position:absolute; z-index:1;display:none;">

@@ -22,11 +22,13 @@ body {
 	width:300px;
 }
 #footerpart  .copyright{
-	position:absolute;
+	/*position:absolute;*/
 	bottom:0px;
 	right:0px;
-	width:600px;
+	text-align:center;
+	/*width:600px;*/
 }
+
 #headerpart {
 	
 	height:120px;
@@ -88,7 +90,7 @@ body {
 	margin-left:10px;
 }
 #logo {
-	width:100px;
+	width:110px;
 	float:left;
 	height:110px;
 	margin-top:10px;
@@ -97,7 +99,7 @@ body {
 
 #title {
 	float:left;
-	width:680;
+	width:670;
 	background-image:url("hinh/home-banner-time2.jpg");
 	height:115px;
 	margin-left:15px;
@@ -108,7 +110,7 @@ body {
 	text-transform:uppercase;
 	padding-left:60px;
 	text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
-	color: #5c0408;
+	color: #fc0408;
 	opacity: 0.5;
 	font: 50px 'Museo700';
 }
@@ -164,7 +166,10 @@ div.video {
 .miniicon {
 	margin-left:5px;
 }
-
+.vtitle {
+	font-style:italic;
+	font-size:10px;
+}
 .calendar{
 	margin:3px 10px 5px 5px;
 	/*padding-top:5px;*/

@@ -19,7 +19,7 @@ $nam = date("Y");
 <div id='mainpage'>
   <div id="headerpart">
     <div id="logo">
-	<img src="hinh/sand-clock.gif" height="100px" />
+	<img src="hinh/trong100.jpg" height="110px" />
 	</div>
 	<div id="title">
 	<div style="position:absolute; z-index:1;display:none;">
@@ -31,6 +31,7 @@ $nam = date("Y");
 </object>
 	</div><br/>
 	<span>NGày này Năm Xưa</span>
+	<div style="text-align:center;color:blue;">Dân ta phải biết sử ta<br/>Cho tường gốc tích nước nhà Việt Nam <i>(Hồ Chí Minh)</i></div>
 	</div>
 	<div style="clear:both;"></div>
   </div>
@@ -97,7 +98,7 @@ else {
 	}
 	echo '<div class="tieude">NGÀY NÀY NĂM XƯA '.$ngay.'/'.$thang.'</div>';
 	
-	$sql="select * from cacsukien where ngay=$ngay and thang=$thang order by rand();";
+	$sql="select * from cacsukien where ngay=$ngay and thang=$thang and sudung=1 order by thutu ;";
 	$result = mysql_query($sql);
 	if ($result) {
 		if (mysql_num_rows($result)) {
@@ -114,7 +115,7 @@ else {
 
 	</div>
 	<div id="rightside">
-	  <div id="calendar" class="rightwidget">
+	  <div id="calendar" class="rightwidget"><div class="centertitle">LỊCH</div>
 	  <div style="text-align:center;background:#FAD4F6;"><b>Tháng <?php echo $thang." năm ".$nam;?></b></div>
 	  <table>
 	  <tr align="center"><td width="15%">Thứ2</td><td width="15%">Thứ3</td><td width="15%">Thứ4</td><td width="15%">Thứ5</td><td width="15%">Thứ6</td><td width="15%">Thứ7</td><td width="15%">CN</td>
@@ -145,13 +146,37 @@ echo "<td>&nbsp;</td></tr>";
 ?>
 	  </table>
 	  </div>
-	  <div id="somevideos" class="rightwidget">
-	  video
+	  <div id="somevideos" class="rightwidget"><div class="centertitle">VIDEO</div>
+<?php 
+$ngaythang=date("dm");
+$sql="select * from phimtulieu where sudung=1 and ngaythang='$ngaythang' order by rand() limit 1;";
+$result=mysql_query($sql);
+if ($result) {
+	if (mysql_num_rows($result)) { //co
+		if ($row=mysql_fetch_array($result)) {
+			
+			echo '<iframe width="280" src="//www.youtube.com/embed/'.$row['youtubeid'].'" frameborder="0" allowfullscreen></iframe>';
+			echo "<div class='vtitle'>".$row['tieude']."</div>";
+		}
+	} 
+	else { //khong co
+		$sql="select * from phimtulieu where sudung=1 order by rand() limit 1;";
+		$result=mysql_query($sql);
+		if ($row=mysql_fetch_array($result)) {
+			
+			echo '<iframe width="280" src="//www.youtube.com/embed/'.$row['youtubeid'].'" frameborder="0" allowfullscreen></iframe>';
+			echo "<div class='vtitle'>".$row['tieude']."</div>";
+		}
+	}
+}
+?>	  
+		
 	  </div>
+	  <!--
 	  <div id="otherstuff" class="rightwidget">
 	  right side
 	  </div>
-	
+	-->
 	</div>
 	<div style="clear:both;">
 	</div>
@@ -162,7 +187,7 @@ echo "<td>&nbsp;</td></tr>";
     <img src="hinh/mountain.png" width="220px"/>
   </div>
   <div class="copyright">
-  Nhóm thực hiện dự án: Nguyễn Hữu Tứ, Trần Đình Trị - 2014 
+  Nhóm thực hiện dự án: Nguyễn Hữu Tứ, Trần Đình Trị - 2014 <a href="http://thptnguyendu.edu.vn">THPT Nguyễn Du</a>
   </div>
 </div>
 

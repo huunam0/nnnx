@@ -28,7 +28,7 @@ if (isset($_GET['date'])) {
 	$thang = substr($_GET['date'],2,2);
 }
 
-if (!isset($_GET['notitle'])) echo '<div style="text-align:center;">NGÀY NÀY NĂM XƯA '.$ngay.'/'.$thang.'</div>';
+if (isset($_GET['notitle'])) echo '<div style="text-align:center;">NGÀY NÀY NĂM XƯA '.$ngay.'/'.$thang.'</div>';
 $sql="select * from cacsukien where sudung=1 and ngay=$ngay and thang=$thang order by thutu;";
 //echo $sql;
 $result = mysql_query($sql);

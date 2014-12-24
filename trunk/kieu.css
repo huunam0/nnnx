@@ -106,13 +106,19 @@ body {
 	background-repeat:repeat-x;
 	background-size:100%;
 }
-#title  span{
+#title  .tieude{
 	text-transform:uppercase;
 	padding-left:60px;
+	padding-top:5px;
 	text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
 	color: #fc0408;
 	opacity: 0.5;
 	font: 50px 'Museo700';
+}
+#title  .loicuabac{
+	text-align:center;
+	color:blue;
+	text-shadow: 1px 1px #FFFFFF;
 }
 .rightwidget {
 	background:#f0f5f7;

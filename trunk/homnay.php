@@ -23,9 +23,12 @@ date_default_timezone_set("Asia/Ho_Chi_Minh");
 require_once("config.php");
 $ngay = date("d");
 $thang = date("m");
-$nam = date("y");
+if (isset($_GET['date'])) {
+	$ngay = substr($_GET['date'],0,2);
+	$thang = substr($_GET['date'],2,2);
+}
 
-if (isset($_GET['title'])) echo '<div style="text-align:center;">NGÀY NÀY NĂM XƯA</div>';
+if (!isset($_GET['notitle'])) echo '<div style="text-align:center;">NGÀY NÀY NĂM XƯA '.$ngay.'/'.$thang.'</div>';
 $sql="select * from cacsukien where ngay=$ngay and thang=$thang order by rand();";
 //echo $sql;
 $result = mysql_query($sql);

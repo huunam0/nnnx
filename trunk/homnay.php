@@ -29,7 +29,7 @@ if (isset($_GET['date'])) {
 }
 
 if (!isset($_GET['notitle'])) echo '<div style="text-align:center;">NGÀY NÀY NĂM XƯA '.$ngay.'/'.$thang.'</div>';
-$sql="select * from cacsukien where ngay=$ngay and thang=$thang order by rand();";
+$sql="select * from cacsukien where sudung=1 ngay=$ngay and thang=$thang order by thutu;";
 //echo $sql;
 $result = mysql_query($sql);
 if ($result) {

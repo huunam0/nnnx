@@ -43,7 +43,7 @@ $nam = date("Y");
   </div>
   <div class="menu_out">
   <div class="menu_in">
-      <a href="gioithieu.php" class="menu">Giới thiệu</a>
+      <a href="gioithieu.html" class="menu">Giới thiệu</a>
     </div>
   </div>
   <div id="danhngon">
@@ -60,59 +60,17 @@ if ($row=mysql_fetch_array($result)) {
   </div>
   <div id="content">
     <div id = "leftside">
-	  
-<?php
-if (isset($_GET['id'])) {
-	$skid=intval($_GET['id']);
-	echo '<div class="tieude">SỰ KIỆN</div>';
-	$sql="select * from cacsukien where id=$skid;";
-	$result = mysql_query($sql);
-	if ($result) {
-		if (mysql_num_rows($result)) {
-			if ($row = mysql_fetch_array($result)) {
-				echo '<div class="motdong"><p class="calendar">'.$row['nam'].'<span>'.$row['ngay'].' / '.$row['thang'].'</span></p><p>'.showBBcodes($row['sukien']).'</p></div>';
-				echo '<div class="tieude">TƯ LIỆU</div>';
-				$sql="select * from cactulieu where sk=$skid order by theloai";
-				$result = mysql_query($sql);
-				if ($result) {
-					while ($tl = mysql_fetch_array($result)) {
-						echo "<div class='tulieu ".$theloai[$tl['theloai']]."'><a href='".$tl['url']."' target='_blank'>".$tl['tieude']."</a></div>";
-					}
-				}
-				//echo "</div>";
-			}
-		}
-		else {
-			echo "Không có sự kiện này.";
-		}
-	}
-	else {
-		echo "Lỗi";
-	}
-} 
-else {
-	if (isset($_GET['date'])) {
-		$ngaythang = explode("-",$_GET['date']);
-		$ngay=$ngaythang[0];
-		$thang=$ngaythang[1];
-	}
-	echo '<div class="tieude">NGÀY NÀY NĂM XƯA '.$ngay.'/'.$thang.'</div>';
-	
-	$sql="select * from cacsukien where ngay=$ngay and thang=$thang and sudung=1 order by thutu ;";
-	//echo $sql;
-	$result = mysql_query($sql);
-	if ($result) {
-		if (mysql_num_rows($result)) {
-			while ($row = mysql_fetch_array($result)) {
-				if ($row['nam'])
-					echo '<div class="motdong"><p class="calendar">'.$row['nam'].'<span>'.$row['ngay'].' / '.$row['thang'].'</span></p><p><a href="index.php?id='.$row['id'].'">'.showBBcodes($row['sukien']).'</a></p></div>';
-				else
-					echo '<div class="motdong"><p class="calendar">'.$row['ngay'].'/'.$row['thang'].'<span></span></p><p><a href="index.php?id='.$row['id'].'">'.showBBcodes($row['sukien']).'</a></p></div>';
-			}
-		}
-	}
-}
-?>
+	<p>GIỚI THIỆU DỰ ÁN</p>
+	<p>Lịch sử có vai trò vô cùng quan trọng như vậy trong hệ thống giáo dục của bất kỳ quốc gia nào, không chỉ riêng Việt Nam. </p><p>Tuy nhiên trong những năm gần đây, việc học môn lịch sử không được sự quan tâm của đa số học sinh.</p><p>
+Học sinh ngày nay được sử dụng internet nhiều, nhưng ít quan tâm đến các vấn đề lịch sử.</p><p>
+Một số trang web cũng có chuyên mục ngày này năm xưa để nhắc nhở người đọc các sự kiện lịch sử, nhưng các bài viết đó không được cập nhật, bổ sung, và thiếu các tư liệu cần thiết để giúp người dùng hiểu rõ hơn về các sự kiện đó.
+</p>
+	<p>Đề tài này sẽ xây dựng một website “Ngày này năm xưa” nhằm tập hợp tất cả các sự kiện sưu tầm được cùng các tư liệu liên quan đến sự kiện. Các sự kiện phải có ngày, tháng, năm rõ ràng và có ý nghĩa nhất định. Các tư liệu tập trung chủ yếu ở bốn dạng: hình ảnh, video, bài báo và bài viết wiki. Website này chỉ lưu trữ địa chỉ đường dẫn đến tư liệu trên mạng internet.</p><p>
+Người sử dụng khi vào trang web, họ sẽ thấy ngay các sự kiện ngày này năm xưa của ngày hôm đó. Nếu họ quan tâm đến sự kiện nào thì trang web sẽ cung cấp các tư liệu liên quan đến sự kiện đó để họ tìm hiểu.
+Website này còn là nơi cung cấp nội dung cho các website khác làm chuyên mục ngày này năm xưa. Các website đó chỉ cần nhúng 1 frame (khung) vào bất cứ vị trí nào, thì họ sẽ có ngay chuyên mục ngày này năm xưa một cách đầy đủ mà không cần phải đầu tư viết bài và tìm tư liệu.</p>
+<p>Với ý tưởng đó, trong bối cảnh đất nước đang tiến hành sự nghiệp công nghiệp hóa, hiện đại hóa với những thời cơ và thách thức to lớn, chúng em mong muốn được góp phần nhỏ vào việc bảo tồn và phát huy văn hóa dân tộc. </p>
+<p>Nhóm thực hiện</p>
+
 
 	</div>
 	<div id="rightside">
